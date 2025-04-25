@@ -31,7 +31,7 @@ public class WidgetUpdateWorker extends Worker {
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
         int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(context, WeatherWidgetProvider.class));
 
-        String city = "Paris"; // Exemple, à remplacer par une préférence si nécessaire
+        String city = "Toulouse";
 
         WeatherData weatherData = fetchWeatherDataSync(city);
 

@@ -32,7 +32,7 @@ public class WidgetUpdateService extends IntentService {
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
             int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, WeatherWidgetProvider.class));
 
-            String city = "Paris";
+            String city = "Toulouse";
 
             WeatherData weatherData = fetchWeatherDataSync(city);
 

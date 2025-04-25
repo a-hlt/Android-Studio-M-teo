@@ -78,7 +78,7 @@ public class WeatherWidgetProvider extends AppWidgetProvider {
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.widget_refresh_button, refreshPendingIntent);
 
-        Intent openAppIntent = new Intent(context, MainActivity.class); // Adaptez si votre activité principale a un autre nom
+        Intent openAppIntent = new Intent(context, MainActivity.class);
         PendingIntent openAppPendingIntent = PendingIntent.getActivity(context,
                 0,
                 openAppIntent,
@@ -91,10 +91,10 @@ public class WeatherWidgetProvider extends AppWidgetProvider {
     }
 
     private static int getWeatherIconResource(String weatherMain) {
-        if (weatherMain == null) return R.mipmap.ic_launcher; // Adaptez l'icône par défaut
+        if (weatherMain == null) return R.mipmap.ic_launcher;
 
         weatherMain = weatherMain.toLowerCase();
-        // Assurez-vous que les drawables existent dans res/drawable
+
         if (weatherMain.contains("clear")) {
             return R.drawable.ic_clear;
         } else if (weatherMain.contains("clouds")) {
