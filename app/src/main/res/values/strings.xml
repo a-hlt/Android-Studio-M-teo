@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MeteoApp</string>
+
+    <string name="action_settings_title">Réglages</string>
+    <string name="action_about_title">À Propos</string>
+
+    <string name="about_version_label">Version :1</string>
+    <string name="about_developer_label">Développé par :Médéric Aubin</string>
+    <string name="about_developer_name">Oui</string>
+    <string name="about_description">Une application simple pour afficher la météo actuelle.</string>
+
+</resources>
