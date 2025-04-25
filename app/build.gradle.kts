@@ -59,7 +59,7 @@ dependencies {
 
     // RecyclerView (pour la liste de prévisions)
     implementation("androidx.recyclerview:recyclerview:1.2.1") // Ou version compatible
-
+    implementation("androidx.work:work-runtime:2.7.1")
     // Tests (Optionnel mais recommandé)
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")

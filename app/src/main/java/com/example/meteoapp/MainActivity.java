@@ -29,11 +29,11 @@ import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.example.meteoapp.data.ForecastItem; // Assurez-vous que ce chemin est correct
+import com.example.meteoapp.data.ForecastItem;
 import com.example.meteoapp.data.WeatherData;
-import com.example.meteoapp.ui.CustomWeatherIconView; // Assurez-vous que ce chemin est correct
-import com.example.meteoapp.ui.ForecastAdapter;    // Assurez-vous que ce chemin est correct
-import com.example.meteoapp.ui.WeatherViewModel;   // Assurez-vous que ce chemin est correct
+import com.example.meteoapp.ui.CustomWeatherIconView;
+import com.example.meteoapp.ui.ForecastAdapter;
+import com.example.meteoapp.ui.WeatherViewModel;
 
 import java.util.List;
 

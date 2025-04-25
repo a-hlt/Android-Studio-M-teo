@@ -19,7 +19,7 @@ public class WidgetUpdateService extends IntentService {
 
     private static final String TAG = "WidgetUpdateService";
     public static final String ACTION_UPDATE_WIDGET = "com.votredomaine.votremeteoapp.action.UPDATE_WIDGET";
-    private static final String API_KEY = "VOTRE_CLE_API_OPENWEATHERMAP"; // !! METTEZ VOTRE CLÉ ICI !!
+    private static final String API_KEY = "2364a112c01388903d79d828efca398a";
 
 
     public WidgetUpdateService() {
