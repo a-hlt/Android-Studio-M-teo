@@ -43,7 +43,7 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.3.1") // Ou version compatible
     implementation("com.google.android.material:material:1.4.0") // Ou version compatible
     implementation("androidx.constraintlayout:constraintlayout:2.1.1") // Ou version compatible
-
+    implementation("com.google.android.material:material:1.9.0")
     // Networking (Retrofit pour appeler l'API Météo)
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0") // Pour parser le JSON
