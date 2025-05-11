@@ -1,12 +1,60 @@
 <resources>
-    <string name="app_name">MeteoApp</string>
+    <string name="app_name">Teophe</string>
+    <string name="search_location">Rechercher une localisation</string>
+    <string name="enter_city_name">Entrez le nom d une ville</string>
+    <string name="search">Rechercher</string>
+    <string name="or_use_current_location">Ou utiliser ma position actuelle</string>
+    <string name="use_my_location">Utiliser ma position</string>
+    <string name="recent_searches">Recherches récentes</string>
+    <string name="view_history">Voir l historique</string>
+    <string name="weather_icon">Icône météo</string>
 
-    <string name="action_settings_title">Réglages</string>
-    <string name="action_about_title">À Propos</string>
+    <string name="back">Retour</string>
+    <string name="details">Détails</string>
+    <string name="feels_like">Ressenti</string>
+    <string name="humidity">Humidité</string>
+    <string name="wind">Vent</string>
+    <string name="pressure">Pression</string>
+    <string name="sunrise">Lever du soleil</string>
+    <string name="sunset">Coucher du soleil</string>
+    <string name="forecast">Prévisions</string>
 
-    <string name="about_version_label">Version :1</string>
-    <string name="about_developer_label">Développé par :Médéric Aubin</string>
-    <string name="about_developer_name">Oui</string>
-    <string name="about_description">Une application simple pour afficher la météo actuelle.</string>
+    <string name="search_history">Historique des recherches</string>
+    <string name="no_search_history">Aucun historique de recherche.</string>
+    <string name="clear_history">Effacer historique</string>
+    <string name="clear_history_confirmation">Voulez-vous vraiment effacer tout historique des recherches ?</string>
+    <string name="history_cleared">Historique effacé.</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+
+    <string name="location_permission_denied">Permission de localisation refusée.</string>
+    <string name="location_not_available">Localisation non disponible.</string>
+    <string name="enter_city_name_prompt">Veuillez entrer un nom de ville.</string>
+    <string name="default_city_fallback">Ville par défaut (Paris) utilisée.</string>
+    <string name="error_fetching_weather">Erreur lors de la récupération de la météo: %1$s</string>
+    <string name="error_fetching_forecast">Erreur lors de la récupération des prévisions: %1$s</string>
+
+    <string name="exit_app">Quitter l application</string>
+    <string name="exit_confirmation">Voulez-vous vraiment quitter l application ?</string>
+
+    <string name="action_settings">Paramètres</string>
+    <string name="pref_category_general">Général</string>
+    <string name="pref_title_units">Unités de température</string>
+    <string name="pref_title_default_city">Ville par défaut</string>
+    <string name="pref_summary_default_city">Définir une ville par défaut pour le démarrage</string>
+    <string name="pref_dialog_title_default_city">Entrer la ville par défaut</string>
+    <string name="search_city_or_last">Rechercher ou appuyer sur %1$s</string>
+
+    <string name="delete_item">Supprimer l\'élément</string>
+    <string name="delete_history_item_title">Supprimer l\'élément</string>
+    <string name="delete_history_item_message">Voulez-vous vraiment supprimer les données météo pour %1$s de l\'historique ?</string>
+    <string name="item_deleted_success">Données pour %1$s supprimées.</string>
+    <string name="item_deleted_error">Erreur lors de la suppression de l\'élément.</string>
+    <string name="search_location_hint">Rechercher une ville…</string>
+    <string name="or_separator">ou</string>
+    <string name="view_full_history">Voir tout l\'historique</string>
+    <string name="ic_desc_sunny">Ensoleillé</string>
+    <string name="ic_desc_cloudy">Nuageux</string>
+    <string name="no_recent_searches">Nuageux</string>
 
 </resources>

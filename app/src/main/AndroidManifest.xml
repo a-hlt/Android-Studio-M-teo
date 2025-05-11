@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.meteoapp">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -15,36 +14,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MeteoApp"
-        android:usesCleartextTraffic="true"
-        tools:targetApi="31">
+        android:theme="@style/Theme.Teophe"
+    tools:targetApi="31">
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <activity
+        android:name=".MainActivity"
+        android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+    <activity android:name=".WeatherActivity" />
+    <activity android:name=".HistoryActivity"
+        android:parentActivityName=".MainActivity"/>
+    <activity
+        android:name=".SettingsActivity"
+        android:label="@string/action_settings"
+        android:parentActivityName=".MainActivity">
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+    </activity>
 
-        <activity android:name=".AboutActivity" android:label="À Propos"/>
 
-        <receiver android:name=".WeatherWidgetProvider"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/weather_widget_info" />
-        </receiver>
+</application>
 
-        <service
-            android:name=".WidgetUpdateService"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:exported="false"/>
-
-    </application>
-
-</manifest>
+    </manifest>

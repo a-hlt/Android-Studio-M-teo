@@ -1,165 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="?android:attr/colorBackground"
     tools:context=".MainActivity">
 
-    <!-- Section de recherche de ville -->
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayoutCity"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="0dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Entrez une ville"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSearch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginEnd="8dp">
+        android:background="?android:attr/colorBackground"
+        app:elevation="0dp">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editTextCity"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbarMain"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:imeOptions="actionSearch"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="?attr/actionBarSize"
+            app:title="@string/app_name"
+            app:titleTextColor="?android:attr/textColorPrimary"
+            app:menu="@menu/main_menu" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonSearch"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="OK"
-        app:icon="@android:drawable/ic_menu_search"
-        app:iconGravity="textStart"
-        app:layout_constraintBottom_toBottomOf="@id/textInputLayoutCity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textInputLayoutCity" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonGps"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Utiliser ma position GPS"
-        app:icon="@android:drawable/ic_menu_mylocation"
-        app:iconGravity="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textInputLayoutCity" />
-
-    <!-- Carte pour les informations météo actuelles -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardCurrentWeather"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="8dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonGps"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="24dp"
+        android:paddingBottom="16dp">
 
-            <TextView
-                android:id="@+id/textViewCity"
-                android:layout_width="wrap_content"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tilCitySearch"
+                style="?attr/textInputStyle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Nom de la Ville" />
-
-            <com.example.meteoapp.ui.CustomWeatherIconView
-                android:id="@+id/customIcon"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:layout_marginTop="12dp"
-                android:contentDescription="Icône météo actuelle"
+                android:layout_marginTop="32dp"
+                android:hint="@string/search_location_hint"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewCity"
-                tools:background="#DDD" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:startIconDrawable="@drawable/ic_search_small"
+                app:startIconTint="?attr/colorOnSurface">
 
-            <ImageView
-                android:id="@+id/imageViewWeatherIcon"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="16dp"
-                android:visibility="gone"
-                android:contentDescription="Icône météo (standard)"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textViewCity"
-                tools:srcCompat="@mipmap/ic_launcher"
-                tools:visibility="visible"/>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCitySearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="?android:attr/textColorPrimary"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/textViewTemperature"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            app:layout_constraintEnd_toEndOf="parent"
+            <Button
+            android:id="@+id/btnSearch"
+            style="?attr/materialButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/search"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintTop_toBottomOf="@id/tilCitySearch"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/customIcon"
-            tools:text="25°C" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            <TextView
-                android:id="@+id/textViewDescription"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            app:layout_constraintEnd_toEndOf="parent"
+        <TextView
+            android:id="@+id/tvOrSeparator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/or_separator"
+            android:textColor="?android:attr/textColorSecondary"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSearch"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewTemperature"
-            tools:text="Description Météo" />
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
+        <Button
+            android:id="@+id/btnUseLocation"
+            style="?attr/materialButtonOutlinedStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/use_my_location"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            app:icon="@drawable/ic_my_location"
+            app:iconGravity="textStart"
+            app:iconTint="?attr/colorOnSurface"
+            app:layout_constraintTop_toBottomOf="@id/tvOrSeparator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!-- Prévisions -->
-    <TextView
-        android:id="@+id/textViewForecastLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Prévisions"
-        android:textAppearance="@style/TextAppearance.AppCompat.Title"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/cardCurrentWeather" />
+        <TextView
+            android:id="@+id/tvRecentSearchesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/recent_searches"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/btnUseLocation"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewForecast"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentSearches"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:minHeight="100dp"
+            android:layout_marginTop="8dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_recent_search_dark"
+            tools:itemCount="3"
+            app:layout_constraintTop_toBottomOf="@id/tvRecentSearchesTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:nestedScrollingEnabled="false"/>
+
+        <TextView
+            android:id="@+id/tvEmptyRecentSearches"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/no_recent_searches"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textAlignment="center"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tvRecentSearchesTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            tools:visibility="visible"/>
+
+        <Space
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@id/rvRecentSearches"
+        app:layout_constraintBottom_toTopOf="@id/btnHistory"
+        app:layout_constraintVertical_weight="1"
+        android:minHeight="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+        <Button
+            android:id="@+id/btnHistory"
+            style="?attr/materialButtonStyle"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/textViewForecastLabel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:listitem="@layout/list_item_forecast" />
-
-    <ProgressBar
-        android:id="@+id/progressBarLoading"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:contentDescription="Chargement en cours..."
+        android:text="@string/view_full_history"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toBottomOf="@id/spacer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+    </LinearLayout>
